@@ -1,0 +1,41 @@
+<resources>
+    <string-array name="theme_entries">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Use system theme</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="download_entries">
+        <item>Default (100MB)</item>
+        <item>1.0 MB</item>
+        <item>4.7 MB</item>
+        <item>10.6 MB</item>
+        <item>32 MB</item>
+        <item>50 MB</item>
+        <item>Disable</item>
+    </string-array>
+    <string-array name="download_values">
+        <item>default(100_mb)</item>
+        <item>1.0_mb</item>
+        <item>4.7_mb</item>
+        <item>10.6_mb</item>
+        <item>32_mb</item>
+        <item>50_mb</item>
+        <item>disable</item>
+    </string-array>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+</resources>

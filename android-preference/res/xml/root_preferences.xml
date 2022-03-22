@@ -1,0 +1,114 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">// Where we are going to write our
+    preferences
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_person_pin"
+        app:title="Personal details">// It is the holder of a particular group of settings
+
+        <EditTextPreference
+            app:key="myEditText"
+            app:title="Enter your name"
+            app:useSimpleSummaryProvider="true" />
+        <CheckBoxPreference
+            app:defaultValue="true"
+            app:key="pref"
+            app:summary="Check the text box if you like our design layout"
+            app:title="Mood check" />
+        <SeekBarPreference
+            android:max="5"
+            app:defaultValue="3"
+            app:dependency="pref"
+            app:icon="@drawable/ic_baseline_star"
+            app:key="rating_bar"
+            app:min="0"
+            app:showSeekBarValue="true"
+            app:summary="Rate this app in a scale of 0 -> 5"
+            app:title="Rate this app" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_color_lens"
+        app:title="General">
+        <ListPreference
+            app:defaultValue="1"
+            app:dialogTitle="Theme"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:key="light"
+            app:title="Choose your Theme"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_app_settings"
+        app:title="Chat features">
+        <SwitchPreferenceCompat
+            app:key="chat_features"
+            app:summary="Use Wi-Fi or data for messaging when available"
+            app:title="Enable chat features" />
+
+        <SwitchPreferenceCompat
+            app:dependency="chat_features"
+            app:key="attachment"
+            app:summaryOff="Let others know you have read their message "
+            app:summaryOn="Other people will see you have read their text automatically"
+            app:title="Send read receipts" />
+        <SwitchPreferenceCompat
+            app:dependency="chat_features"
+            app:key="attachment"
+            app:summaryOff="Let others know your are typing"
+            app:summaryOn="Other people will see whenever you are typing"
+            app:title="Show type indicators" />
+        <ListPreference
+            app:defaultValue="default(100_mb)"
+            app:dependency="chat_features"
+            app:entries="@array/download_entries"
+            app:entryValues="@array/download_values"
+            app:key="default(100_mb)"
+            app:title="Auto-download files you receive over mobile data"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        app:icon="@drawable/ic_read_more"
+        app:title="Others">
+        <Preference
+            android:summary="That was all we had for today. Feel free to add more android preferences in your application before we meet next time.
+Thank you."
+            app:title="Android Preferences" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/signature_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
